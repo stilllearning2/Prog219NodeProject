@@ -1,0 +1,3 @@
+#!/usr/bin/env node
+var debug = require('debug')('nodeCourseProject');
+var app = require('../app');
