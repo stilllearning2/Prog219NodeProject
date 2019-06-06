@@ -1,15 +1,15 @@
 $(document).on('pagebeforeshow ', '#home', function () {   // see: https://stackoverflow.com/questions/14468659/jquery-mobile-document-ready-vs-page-events
     var info_view = "";      //string to put HTML in
     $('#transcripts').empty();     // since I do this everytime the page is redone, I need to remove existing before apending them all again
-    console.log("get JSON");
+    //console.log("get JSON");
     $.getJSON('/transcriptlist/')  //Send an AJAX request
         .done(function (data) {
-            console.log("json received");
+            //console.log("json received");
             $.each(data, function (index, record) {   // make up each li as an <a> to the details-page
                 $('#transcripts').append('<li><a data-parm=' + record.Course + ' href="#details-page">' +
                     record.Course + '</a></li>');
             });
-            console.log("load lines");
+            //console.log("load lines");
             $("#transcripts").listview('refresh');  // need this so jquery mobile will apply the styling to the newly added li's
             $("a").on("click", function (event) {  // set up an event, if user clicks any, it writes that items data-parm into the details page's html so I can get it there
                 var parm = $(this).attr("data-parm");
@@ -24,12 +24,12 @@ $(document).on('pagebeforeshow', '#details-page', function () {
 
     var textString = 'fix me';
     var id = $('#detailParmHere').text();
-    console.log('find transcript ' + id);
+    //console.log('find transcript ' + id);
     $.getJSON('/findtranscript/' + id)
         .done(function (item) {
             textString = "Year: " + item.Year + "   Term: " + item.Term + "   Course: " + item.Course +
                 "   Credits: " + item.Credits + "   Grade: " + item.Grade;
-            console.log(textString)
+            //console.log(textString)
             $('#showText').text(textString);
         })
         .fail(function (jqXHR, textStatus, err) {
@@ -62,7 +62,7 @@ function addtranscript() {
     const credits = $('#newCredits').val();
     const grade = $('#newGrade').val();
     const newtranscript = { Year: year, Term: term, Course: course, Credits: credits, Grade: grade };
-    console.log(course);
+    //console.log(course);
 
     $.ajax({
         url: '/addtranscript/',
@@ -105,12 +105,12 @@ function updatetranscript() {
 function deletetranscript() {
     var course = document.getElementById('transcriptToDelete').value;
     document.getElementById('transcriptToDelete').value = "";
-    console.log(course + ' to delete function');
+    //console.log(course + ' to delete function');
     $.ajax({
         method: "DELETE",
         url: "/deletetranscript/" + course,
         success: function (result) {
-            console.log(result);
+            //console.log(result);
             window.location.href = '#home';
         }
     })
