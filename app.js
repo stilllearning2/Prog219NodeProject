@@ -27,7 +27,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 // new code from example
-const port = 3000;
+const port=process.env.PORT || 3000
 MongoClient.connect(mongoUrl, option, (err, database) => {
     if (err) return console.log(err)
     let db = database.db("Prog219DB")
