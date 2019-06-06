@@ -10,16 +10,11 @@ module.exports = function (app, db) {
   /* get transcript list */
   app.get('/transcriptlist/', async function (req, res) {
     try {
-      //console.log('get data');
       var data = await db.collection('Transcripts').find().toArray();
-      //console.log('sort data');
-      //data.sort(compare);
-      //console.log('send failed');
+      data.sort(compare);
       res.send(data);
-      //console.log('data sent');
     }
     catch (err) {
-      console.log('get all failed');
       console.error(err);
     }
   });
@@ -56,7 +51,6 @@ module.exports = function (app, db) {
     const theCourse = req.params.id;
     db.collection('Transcripts').findOne({ Course: theCourse }, (err, item) => {
       if (err) {
-        console.log('error');
         res.send({ 'error': 'An error has occurred :(' });
       } else {
         if (item == null) {
@@ -71,7 +65,6 @@ module.exports = function (app, db) {
   /* delete transcript */
   app.delete('/deletetranscript/:id', (req, res) => {
     const theCourse = req.params.id;
-    console.log(theCourse + ' to delete');
     const which = { 'Course': theCourse };  // delete by Course
     db.collection('Transcripts').deleteOne(which, (err, item) => {
       if (err) {
