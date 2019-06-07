@@ -45,10 +45,10 @@ $(document).on('pagebeforeshow', '#update-page', function () {
     $.getJSON('/findtranscript/' + id)
         .done(function (item) {
             $('#updateYear').val() = item.Year;
-            $('#updateTerm').val() = item.Term);
-            $('#updateCourse').val() = item.Course);
-            $('#updateCredits').val() = item.Credits);
-            $('#updateGrade').val() = item.Grade);
+            $('#updateTerm').val() = item.Term;
+            $('#updateCourse').val() = item.Course;
+            $('#updateCredits').val() = item.Credits;
+            $('#updateGrade').val() = item.Grade;
         })
         .fail(function (jqXHR, textStatus, err) {
             textString = "could not find";
