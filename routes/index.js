@@ -77,7 +77,7 @@ module.exports = function (app, db) {
 
 
   /* update transcript */
-  app.post('/updatetranscript/:id', (req, res) => {
+  app.put('/updatetranscript/:id', (req, res) => {
     const oldCourse = req.params.id;
     const transcript = req.body;
     const updateYear = transcript.Year;
