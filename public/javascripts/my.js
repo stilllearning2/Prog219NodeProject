@@ -15,6 +15,7 @@ $(document).on('pagebeforeshow ', '#home', function () {   // see: https://stack
                 var parm = $(this).attr("data-parm");
                 //do something here with parameter on  details page
                 $("#detailParmHere").html(parm);
+                $("#updateCourseHere").html(parm);
             });
         }); // end of .done
 });
@@ -30,10 +31,6 @@ $(document).on('pagebeforeshow', '#details-page', function () {
                 "     Credits: " + item.Credits + "     Grade: " + item.Grade;
             //console.log(textString)
             $('#showText').text(textString);
-            $("#details a").on("click", function (event) {  // set up an event, if user clicks any, it writes that items data-parm into the details page's html so I can get it there
-                    //put term into hidden field on update-page
-                    $("#upateCourseHere").html(item.Term);
-                });
             })
         .fail(function (jqXHR, textStatus, err) {
             textString = "could not find";
