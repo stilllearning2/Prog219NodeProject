@@ -1,7 +1,7 @@
 var express = require('express');
 var path = require('path');
 //var favicon = require('serve-favicon');
-var logger = require('morgan');
+//var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
@@ -19,7 +19,7 @@ var app = express();
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/assets/favicon/favicon.ico'));
-app.use(logger('dev'));
+//app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));  // new
 app.use(cookieParser());
@@ -34,6 +34,6 @@ MongoClient.connect(mongoUrl, option, (err, database) => {
     require('./routes/index')(app, db);
 
     app.listen(port, () => {
-        console.log('Web server is live on ' + port);
+        //console.log('Web server is live on ' + port);
     });
 })
