@@ -78,18 +78,18 @@ function addtranscript() {
 }
 
 
-/*
 function updatetranscript() {
-    var oldCourse = $('detailParmHere').innerHTML;
-    var transcriptpriority = $('priority').value;
-    var transcriptCourse = $('Course').value;
-    var transcriptdescription = $('description').value;
-
-    // sending all 3 values in json object, even though only using Course
-    dataObject = { "Priority": transcriptpriority, "Course": transcriptCourse, "Description": transcriptdescription };
+    const year = $('#updateYear').val();
+    const term = $('#updateTerm').val();
+    const course = $('#updateCourse').val();
+    const credits = $('#updateCredits').val();
+    const grade = $('#updateGrade').val();
+    
+    // sending all 5 values for the course in json object 
+    dataObject = { "Year": year, "Term": term, "Course": course, "Credits": credits, "Grade": grade };
 
     $.ajax({
-        url: '/updatetranscript/' + oldCourse,  // putting the transcript Course in the URL for the PUT method
+        url: '/updatetranscript/' + course,  // putting the transcript Course in the URL for the PUT method
         method: 'PUT',
         dataType: 'json',
         contentType: 'application/json',
@@ -100,7 +100,7 @@ function updatetranscript() {
         }
     });
 }
-*/
+
 
 function deletetranscript() {
     var course = document.getElementById('detailParmHere').innerHTML;
