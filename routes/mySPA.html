@@ -30,15 +30,15 @@
 
             <div data-role="content">
                 <div>
-                    <ul data-role="listview" data-autodividers="true" data-theme="a" id="transcripts"  data-transition="slideup"></ul>
+                    <ul data-role="listview" data-autodividers="true" data-theme="a" id="transcripts" data-transition="slideup" ></ul>
                 </div>
 
                 <br />
-                <a href="#addpage" class="ui-btn" data-theme="b" data-transition="slideup">Go to Add Page</a>                
+                <a href="#addpage" class="ui-btn" data-theme="b" data-transition="slideup" >Go to Add Page</a>                
             </div>
 
             <div data-role="footer">
-                <h3>copyright Lem and Craig 2019</h3>
+                <h3>Copyright Lem Haile and Craig 2019</h3>
             </div>
         </div>
 
@@ -60,12 +60,11 @@
                     Grade: <input type="text" id="newGrade" size="2" /> <br />
                     <input type="button" value="Add New" onclick="addtranscript()" />
                 </div>
-
-                <a href="#home" class="ui-btn" data-rel="back"  data-transition="slidedown">Go Back</a>
+                <a href="#home" class="ui-btn" data-transition="slidedown">Home</a>
             </div>
 
             <div data-role="footer">
-                <h3>copyright Lem and Craig 2019</h3>
+                <h3>Copyright Lem Haile and Craig 2019</h3>
             </div>
         </div>
 
@@ -75,18 +74,20 @@
             <div data-theme="a" data-role="header">
                 <h3>The Transcripts App</h3>
                 <h4>Details Page</h4>
-                <a href="#home" class="ui-btn-left">Back</a>
             </div>
 
             <div data-role="content">
-                <p id="detailParmHere" hidden>change1</p>
-                <p><span id="showText">change 2</span></p>
-                <br />
-                <input type="button" value="Delete" onclick="deletetranscript()" />
+                <div>
+                    <p id="detailParmHere" hidden>change1</p>
+                    <p><span id="showText">change 2</span></p>
+                    <br />
+                    <input type="button" value="Delete" onclick="deletetranscript()" />
+                </div>
+                <a href="#home" class="ui-btn" data-transition="slidedown">Home</a>
             </div>
-
+            
             <div data-role="footer">
-                <h3>copyright Lem and Craig 2019</h3>
+                <h3>Copyright Lem Haile and Craig 2019</h3>
             </div>
         </div>
 
