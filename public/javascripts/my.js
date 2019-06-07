@@ -108,9 +108,9 @@ function deletetranscript() {
     $.ajax({
         url: "/deletetranscript/" + course,
         method: "DELETE",
-        //success: function (result) {
-        //    //console.log(result);
-        //    window.location.href = '#home';
-        //}
+        success: function (result) {
+            alert(document.getElementById('detailParmHere').value);
+            window.location.href = '#home';
+        }
     })
 }
