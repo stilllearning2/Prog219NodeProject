@@ -102,7 +102,7 @@ function updatetranscript() {
     const grade = $('#updateGrade').val();
     
     // sending all 5 values for the course in json object 
-    const updatedtranscript = { Year: year, Term: term, Course: course, Credits: credits, Grade: grade };
+    const updatedtranscript = { "Year": year, "Term": term, "Course": course, "Credits": credits, "Grade": grade };
 
     $.ajax({
         url: '/updatetranscript/' + oldCourse,  // putting the transcript Course in the URL for the PUT method
