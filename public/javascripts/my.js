@@ -104,7 +104,6 @@ function updatetranscript() {
 
 function deletetranscript() {
     var course = document.getElementById('detailParmHere').innerHTML;
-    alert(course);
     $.ajax({
         url: "/deletetranscript/" + course,
         method: "DELETE",
