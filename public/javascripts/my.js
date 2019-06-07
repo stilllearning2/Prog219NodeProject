@@ -103,7 +103,7 @@ function updatetranscript() {
 */
 
 function deletetranscript() {
-    var course = document.getElementById('detailParmHere').HTML;
+    var course = document.getElementById('detailParmHere').text;
     alert(course);
     $.ajax({
         url: "/deletetranscript/" + course,
