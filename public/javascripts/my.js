@@ -47,7 +47,6 @@ $(document).on('pagebeforeshow', '#update-page', function () {
             $('#updateCourse').val(item.Course);
             $('#updateCredits').val(item.Credits);
             $('#updateGrade').val(item.Grade);
-            alert(item.Year);
         })
         .fail(function (jqXHR, textStatus, err) {
             textString = "could not find";
