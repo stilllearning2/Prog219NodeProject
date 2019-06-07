@@ -52,7 +52,7 @@ $(document).on('pagebeforeshow', '#update-page', function () {
         })
         .fail(function (jqXHR, textStatus, err) {
             textString = "could not find";
-            $('#showData').text(textString);
+            $('#updateCourseHere').text(textString);
         })
 });
 
