@@ -81,7 +81,33 @@
                     <p id="detailParmHere" hidden >change1</p>
                     <p><span id="showText">change 2</span></p>
                     <br />
+                    <a href="#update" class="ui-btn" data-transition="slideup">Update</a>
                     <input type="button" value="Delete" onclick="deletetranscript()" />
+                </div>
+                <a href="#home" class="ui-btn" data-transition="slidedown">Home</a>
+            </div>
+            
+            <div data-role="footer">
+                <h3>Copyright Lem Haile and Craig 2019</h3>
+            </div>
+        </div>
+
+
+        <div data-role="page" id="updates-page">
+            <div data-theme="a" data-role="header">
+                <h3>The Transcripts App</h3>
+                <h4>Updates Page</h4>
+            </div>
+
+            <div data-role="main" class="ui-content">
+                <div>
+                    <h2>Add a new Product</h2>
+                    Year: <input type="text" id="updateYear" size="4" /> <br />
+                    Term: <input type="text" id="updateTerm" size="10" /> <br />
+                    Course: <input type="text" id="updateCourse" size="20" /> <br />
+                    Credits: <input type="text" id="updateCredits" size="2" /> <br />
+                    Grade: <input type="text" id="updateGrade" size="2" /> <br />
+                    <input type="button" value="Update" onclick="updatetranscript()" />
                 </div>
                 <a href="#home" class="ui-btn" data-transition="slidedown">Home</a>
             </div>
