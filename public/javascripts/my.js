@@ -27,8 +27,8 @@ $(document).on('pagebeforeshow', '#details-page', function () {
     //console.log('find transcript ' + id);
     $.getJSON('/findtranscript/' + id)
         .done(function (item) {
-            textString = "Year: " + item.Year + "   Term: " + item.Term + "   Course: " + item.Course +
-                "   Credits: " + item.Credits + "   Grade: " + item.Grade;
+            textString = "Year: " + item.Year + "     Term: " + item.Term + "     Course: " + item.Course +
+                "     Credits: " + item.Credits + "     Grade: " + item.Grade;
             //console.log(textString)
             $('#showText').text(textString);
         })
