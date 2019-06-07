@@ -41,17 +41,18 @@ $(document).on('pagebeforeshow', '#details-page', function () {
 $(document).on('pagebeforeshow', '#update-page', function () {
     var textString = 'fix me';
     var id = $('#updateCourseHere').text();
-    //console.log('find transcript ' + id);
     $.getJSON('/findtranscript/' + id)
         .done(function (item) {
-            $('#updateYear').val() = item.Year;
-            $('#updateTerm').val() = item.Term;
-            $('#updateCourse').val() = item.Course;
-            $('#updateCredits').val() = item.Credits;
-            $('#updateGrade').val() = item.Grade;
+            $('#updateYear').val(item.Year);
+            $('#updateTerm').val(item.Term);
+            $('#updateCourse').val(item.Course);
+            $('#updateCredits').val(item.Credits);
+            $('#updateGrade').val(item.Grade);
+            alert(item.Year);
         })
         .fail(function (jqXHR, textStatus, err) {
             textString = "could not find";
+            alert(item.Year)
             $('#updateCourseHere').text(textString);
         })
 });
