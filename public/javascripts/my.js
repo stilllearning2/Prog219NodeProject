@@ -109,7 +109,6 @@ function deletetranscript() {
         url: "/deletetranscript/" + course,
         method: "DELETE",
         success: function (result) {
-            alert(document.getElementById('detailParmHere').value);
             window.location.href = '#home';
         }
     })
