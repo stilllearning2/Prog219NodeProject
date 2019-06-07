@@ -77,25 +77,26 @@ module.exports = function (app, db) {
 
 
   /* update transcript */
-  app.put('/updatetranscript/:id', (req, res) => {
+  app.post('/updatetranscript/:id', (req, res) => {
     const oldCourse = req.params.id;
     const transcript = req.body;
-    const newYear = transcript.Year;
-    const newTerm = transcript.Term;
-    const newCourse = transcript.Course;
-    const newCredits = transcript.Credits;
-    const newGrade = transcript.Grade;
+    const updateYear = transcript.Year;
+    const updateTerm = transcript.Term;
+    const updateCourse = transcript.Course;
+    const updateCredits = transcript.Credits;
+    const updateGrade = transcript.Grade;
 
     // updating transcript using Course as key/* GET admin time. */
     db.collection('Transcripts').updateOne({ Course: oldCourse }, {
       $set: {
-        "Year": newYear, "Term": newTerm, "Course": newCourse, "Credits": newCredits, "Grade": newGrade
+        "Year": updateYear, "Term": updateTerm, "Course": updateCourse, "Credits": updateCredits, "Grade": updateGrade
       }
     }, (err, result) => {
       if (err) {
         res.send({ 'error': 'An error has occurred' });
       } else {
         res.send(transcript);
+        res.send('transcript ' + theCourse + ' updated!');
         res.redirect("/transcriptlist/");
       }
     });
