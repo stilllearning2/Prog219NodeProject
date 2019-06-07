@@ -24,7 +24,6 @@ $(document).on('pagebeforeshow ', '#home', function () {   // see: https://stack
 $(document).on('pagebeforeshow', '#details-page', function () {
     var textString = 'fix me';
     var id = $('#detailParmHere').text();
-    //console.log('find transcript ' + id);
     $.getJSON('/findtranscript/' + id)
         .done(function (item) {
             textString = "Year: " + item.Year + "     Term: " + item.Term + "     Course: " + item.Course +
@@ -103,15 +102,16 @@ function updatetranscript() {
     const grade = $('#updateGrade').val();
     
     // sending all 5 values for the course in json object 
-    dataObject = { Year: year, Term: term, Course: course, Credits: credits, Grade: grade };
+    const updatedtranscript = { Year: year, Term: term, Course: course, Credits: credits, Grade: grade };
 
     $.ajax({
         url: '/updatetranscript/' + course,  // putting the transcript Course in the URL for the PUT method
         method: 'POST',
         dataType: 'json',
         contentType: 'application/json',
-        data: JSON.stringify(dataObject),
+        data: JSON.stringify(updatedtranscript),
         success: function (result) {
+            alert("success");
             window.location.href = '#details-page';
         }
     });
