@@ -114,7 +114,7 @@ function updatetranscript() {
         data: JSON.stringify(dataObject),
         success: function (result) {
             alert("success");
-            window.location.href = '#home';
+            window.location.href = '#details-page';
         }
     });
 }
