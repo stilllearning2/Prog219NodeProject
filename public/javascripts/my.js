@@ -112,7 +112,7 @@ function updatetranscript() {
         data: JSON.stringify(updatedtranscript),
         success: function (result) {
             alert("success");
-            window.location.href = '#details-page';
+            window.location.href = '#home';
         }
     });
 }
