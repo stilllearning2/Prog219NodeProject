@@ -52,7 +52,6 @@ $(document).on('pagebeforeshow', '#update-page', function () {
         })
         .fail(function (jqXHR, textStatus, err) {
             textString = "could not find";
-            alert(item.Year)
             $('#updateCourseHere').text(textString);
         })
 });
@@ -104,7 +103,7 @@ function updatetranscript() {
     const grade = $('#updateGrade').val();
     
     // sending all 5 values for the course in json object 
-    dataObject = { "Year": year, "Term": term, "Course": course, "Credits": credits, "Grade": grade };
+    dataObject = { Year: year, Term: term, Course: course, Credits: credits, Grade: grade };
 
     $.ajax({
         url: '/updatetranscript/' + course,  // putting the transcript Course in the URL for the PUT method
@@ -113,7 +112,6 @@ function updatetranscript() {
         contentType: 'application/json',
         data: JSON.stringify(dataObject),
         success: function (result) {
-            alert("success");
             window.location.href = '#details-page';
         }
     });
