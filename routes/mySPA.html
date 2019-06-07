@@ -30,32 +30,11 @@
 
             <div data-role="content">
                 <div>
-                    <ul data-role="listview" data-autodividers="true" data-theme="c" id="transcripts"></ul>
+                    <ul data-role="listview" data-autodividers="true" data-theme="a" id="transcripts"></ul>
                 </div>
 
                 <br />
                 <a href="#addpage" class="ui-btn" data-transition="flip">Go to Add Page</a>                
-            </div>
-
-            <div data-role="footer">
-                <h3>copyright Lem and Craig 2019</h3>
-            </div>
-        </div>
-
-
-
-        <div data-role="page" id="details-page">
-            <div data-theme="a" data-role="header">
-                <h3>The Transcripts App</h3>
-                <h4>Details Page</h4>
-                <a href="#home" class="ui-btn-left">Back</a>
-            </div>
-
-            <div data-role="content">
-                <p id="detailParmHere" hidden>change1</p>
-                <p><span id="showText">change 2</span></p>
-                <br />
-                <a href="#deletepage" class="ui-btn" data-transition="flip">Go to Delete Page</a>
             </div>
 
             <div data-role="footer">
@@ -92,27 +71,24 @@
 
 
 
-        <div data-role="page" id="deletepage" data-theme="d">
-            <div data-role="header">
+        <div data-role="page" id="details-page">
+            <div data-theme="a" data-role="header">
                 <h3>The Transcripts App</h3>
-                <h4>Delete Page</h4>
+                <h4>Details Page</h4>
+                <a href="#home" class="ui-btn-left">Back</a>
             </div>
 
-            <div data-role="main" class="ui-content">
-                <div>
-                    <h2>Delete a Transcript by Course Name</h2>
-                    <input type="text" id="transcriptToDelete" size="25" />
-                    <input type="button" value="Delete" onclick="deletetranscript()" />
-                </div>
-
-                <a href="#home" class="ui-btn" data-transition="flip" data-rel="back">Go Back</a>
+            <div data-role="content">
+                <p id="detailParmHere" hidden>change1</p>
+                <p><span id="showText">change 2</span></p>
+                <br />
+                <input type="button" value="Delete" onclick="deletetranscript()" />
             </div>
 
             <div data-role="footer">
                 <h3>copyright Lem and Craig 2019</h3>
             </div>
         </div>
-        
 
     </body>
 </html>
