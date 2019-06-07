@@ -21,7 +21,6 @@ $(document).on('pagebeforeshow ', '#home', function () {   // see: https://stack
 
 
 $(document).on('pagebeforeshow', '#details-page', function () {
-
     var textString = 'fix me';
     var id = $('#detailParmHere').text();
     //console.log('find transcript ' + id);
@@ -31,12 +30,33 @@ $(document).on('pagebeforeshow', '#details-page', function () {
                 "     Credits: " + item.Credits + "     Grade: " + item.Grade;
             //console.log(textString)
             $('#showText').text(textString);
+            $("a").on("click", function (event) {  // set up an event, if user clicks any, it writes that items data-parm into the details page's html so I can get it there
+                    //put term into hidden field on update-page
+                    $("#upateCourseHere").html(item.Term);
+                });
+            })
+        .fail(function (jqXHR, textStatus, err) {
+            textString = "could not find";
+            $('#showData').text(textString);
+        })
+});
+
+$(document).on('pagebeforeshow', '#update-page', function () {
+    var textString = 'fix me';
+    var id = $('#updateCourseHere').text();
+    //console.log('find transcript ' + id);
+    $.getJSON('/findtranscript/' + id)
+        .done(function (item) {
+            $('#updateYear').val = item.Year;
+            $('#updateTerm').val = item.Term;
+            $('#updateCourse').val = item.Course;
+            $('#updateCredits').val = item.Credits;
+            $('#updateGrade').val = item.Grade;
         })
         .fail(function (jqXHR, textStatus, err) {
             textString = "could not find";
             $('#showData').text(textString);
         })
-
 });
 
 
