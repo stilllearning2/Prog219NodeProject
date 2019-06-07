@@ -89,7 +89,7 @@ module.exports = function (app, db) {
     // updating transcript using Course as key/* GET admin time. */
     db.collection('Transcripts').updateOne({ Course: oldCourse }, {
       $set: {
-        "Year": updateYear, "Term": updateTerm, "Course": updateCourse, "Credits": updateCredits, "Grade": updateGrade
+        Year: updateYear, Term: updateTerm, Course: updateCourse, Credits: updateCredits, Grade: updateGrade
       }
     }, (err, result) => {
       if (err) {
@@ -97,7 +97,6 @@ module.exports = function (app, db) {
       } else {
         res.send(transcript);
         res.send('transcript ' + theCourse + ' updated!');
-        res.redirect("/transcriptlist/");
       }
     });
   });
