@@ -96,7 +96,7 @@ module.exports = function (app, db) {
         res.send({ 'error': 'An error has occurred' });
       } else {
         res.send(transcript);
-        res.send('transcript ' + theCourse + ' updated!');
+       // res.send('transcript ' + theCourse + ' updated!');
       }
     });
   });
