@@ -105,9 +105,9 @@ function updatetranscript() {
     const updatedtranscript = { "Year": year, "Term": term, "Course": course, "Credits": credits, "Grade": grade };
 
     $.ajax({
-        url: '/updatedtranscript/' + oldCourse,  // putting the transcript Course in the URL for the PUT method
+        url: '/updatetranscript/' + oldCourse,  // putting the transcript Course in the URL for the PUT method
         //method: "PUT",
-        type:"PUT",
+        type:'PUT',
         dataType: 'json',
         contentType: 'application/json',
         data: JSON.stringify(updatedtranscript), 
