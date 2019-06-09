@@ -100,7 +100,7 @@ function updatetranscript() {
     const course = $('#updateCourse').val();
     const credits = $('#updateCredits').val();
     const grade = $('#updateGrade').val();
-    
+    Alert(oldCourse);
     // sending all 5 values for the course in json object 
     const updatedtranscript = { "Year": year, "Term": term, "Course": course, "Credits": credits, "Grade": grade };
 
