@@ -106,8 +106,8 @@ function updatetranscript() {
 
     $.ajax({
         url: '/updatedtranscript/' + oldCourse,  // putting the transcript Course in the URL for the PUT method
-        method: "PUT",
-        //type:"POST",
+        //method: "PUT",
+        type:"PUT",
         dataType: 'json',
         contentType: 'application/json',
         data: JSON.stringify(updatedtranscript), 
