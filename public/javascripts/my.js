@@ -105,12 +105,12 @@ function updatetranscript() {
     const updatedtranscript = { "Year": year, "Term": term, "Course": course, "Credits": credits, "Grade": grade };
 
     $.ajax({
-        url: '/updatetranscript/' + oldCourse,  // putting the transcript Course in the URL for the PUT method
+        url: '/updatetranscript/',  // + oldCourse,  // putting the transcript Course in the URL for the PUT method
        // method: 'PUT',
         type:"POST"',
         dataType: 'json',
         contentType: 'application/json',
-        data: JSON.stringify(updatedtranscript),
+        data: JSON.stringify(updatedtranscript), 
         success: function (result) {
             alert("success");
             window.location.href = '#home';
