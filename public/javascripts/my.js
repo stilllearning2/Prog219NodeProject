@@ -1,7 +1,6 @@
 $(document).on('pagebeforeshow ', '#home', function () {   // see: https://stackoverflow.com/questions/14468659/jquery-mobile-document-ready-vs-page-events
     var info_view = "";      //string to put HTML in
     $('#transcripts').empty();     // since I do this everytime the page is redone, I need to remove existing before apending them all again
-    //console.log("get JSON");
     $.getJSON('/transcriptlist/')  //Send an AJAX request
         .done(function (data) {
             //console.log("json received");
@@ -16,7 +15,6 @@ $(document).on('pagebeforeshow ', '#home', function () {   // see: https://stack
                 //do something here with parameter on  details page
                 $("#detailParmHere").html(parm);
                 $("#updateCourseHere").html(parm);
-                alert($("#updateCourseHere").html);
             });
         }); // end of .done
 });
@@ -87,6 +85,7 @@ function addtranscript() {
         contentType: 'application/json',
         data: JSON.stringify(newtranscript),
         success: function (result) {
+            
             alert("success");
             window.location.href = '#home';
         }
@@ -101,10 +100,8 @@ function updatetranscript() {
     const course = $('#updateCourse').val();
     const credits = $('#updateCredits').val();
     const grade = $('#updateGrade').val();
-    alert($('#updateCourseHere').html());
     // sending all 5 values for the course in json object 
     const updatedTranscript = { Year: year, Term: term, Course: course, Credits: credits, Grade: grade };
-    alert(updatedTranscript);
     $.ajax({
         url: '/updatetranscript/' + oldCourse,  // putting the transcript Course in the URL for the PUT method
         //method: "PUT",
@@ -113,8 +110,13 @@ function updatetranscript() {
         contentType: 'application/json',
         data: JSON.stringify(updatedTranscript), 
         success: function (result) {
+            // refresh rows
+            //$('#transcripts').empty();     // since I do this everytime the page is redone, I need to remove existing before apending them all again
+            //$.getJSON('/transcriptlist/')  //Send an AJAX request
+            //    .done(function (data) {
             alert("success");
-            window.location.href = '#home';
+            window.location.href = '#details-page';
+            //}
         }
     });
 }
