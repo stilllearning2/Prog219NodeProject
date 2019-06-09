@@ -50,7 +50,7 @@ $(document).on('pagebeforeshow', '#update-page', function () {
         })
         .fail(function (jqXHR, textStatus, err) {
             textString = "could not find";
-            $('#updateCourseHere').text(textString);
+            $('#updateCourse').text(textString);
         })
 });
 
@@ -94,7 +94,7 @@ function addtranscript() {
 
 
 function updatetranscript() {
-    const oldCourse = $('#updateCourseHere').val();
+    const oldCourse = $('#updateCourseHere').text();
     const year = $('#updateYear').val();
     const term = $('#updateTerm').val();
     const course = $('#updateCourse').val();
