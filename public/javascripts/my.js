@@ -16,6 +16,7 @@ $(document).on('pagebeforeshow ', '#home', function () {   // see: https://stack
                 //do something here with parameter on  details page
                 $("#detailParmHere").html(parm);
                 $("#updateCourseHere").html(parm);
+                alert($("#updateCourseHere").html);
             });
         }); // end of .done
 });
@@ -94,13 +95,13 @@ function addtranscript() {
 
 
 function updatetranscript() {
-    const oldCourse = $('#updateCourseHere').text();
+    const oldCourse = $('#updateCourseHere').html();
     const year = $('#updateYear').val();
     const term = $('#updateTerm').val();
     const course = $('#updateCourse').val();
     const credits = $('#updateCredits').val();
     const grade = $('#updateGrade').val();
-    alert($('#updateCourseHere').text());
+    alert($('#updateCourseHere').html());
     // sending all 5 values for the course in json object 
     const updatedTranscript = { Year: year, Term: term, Course: course, Credits: credits, Grade: grade };
     alert(updatedTranscript);
