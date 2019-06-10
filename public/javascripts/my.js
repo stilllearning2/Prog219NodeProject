@@ -112,7 +112,11 @@ function updatetranscript() {
             alert("Row updated!");
             $("#detailParmHere").html(course);
             $("#updateCourseHere").html(course);
-            $('#showData').text('Updating...');
+            $.mobile.changePage('#details-page', {
+                transition: 'slidedown',
+                reloadPage: true, // optional, force page reload.
+                reverse: true
+              });
         }
     });
 }
