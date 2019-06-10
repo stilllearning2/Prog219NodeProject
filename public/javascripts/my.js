@@ -22,9 +22,7 @@ $(document).on('pagebeforeshow ', '#home', function () {   // see: https://stack
 
 $(document).on('pagebeforeshow', '#details-page', function () {
     var textString = 'fix me';
-    $('#showData').text("Updating...");
     var id = $('#detailParmHere').text();
-    alert(id);
     $.getJSON('/findtranscript/' + id)
         .done(function (item) {
             textString = "Year: " + item.Year + "     Term: " + item.Term + "     Course: " + item.Course +
@@ -114,7 +112,7 @@ function updatetranscript() {
             alert("Row updated!");
             $("#detailParmHere").html(course);
             $("#updateCourseHere").html(course);
-            //window.location.href='#details-page' data-ajax="false";
+            $('#showData').text('Updating...');
         }
     });
 }
