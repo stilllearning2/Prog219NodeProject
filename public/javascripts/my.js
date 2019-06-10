@@ -110,15 +110,9 @@ function updatetranscript() {
         contentType: 'application/json',
         data: JSON.stringify(updatedTranscript), 
         success: function (result) {
-            // refresh rows
-            $('#transcripts').empty();     // since I do this everytime the page is redone, I need to remove existing before apending them all again
-            $.getJSON('/transcriptlist/')  //Send an AJAX request
-                .done(function (data) {});
-                .success(function (result) {
-                    $('#showText').text("");
-                    alert("success");
-                    window.location.href = '#details-page';
-                });
+            alert("Row updated!");
+            window.location.href = '#details-page';
+            location.reload();
         }};
     });
 }
