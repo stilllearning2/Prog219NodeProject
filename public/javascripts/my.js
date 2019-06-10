@@ -111,6 +111,7 @@ function updatetranscript() {
         data: JSON.stringify(updatedTranscript), 
         success: function (result) {
             alert("Row updated!");
+            window.location.href = '#home';
             window.location.href = '#details-page';
         }
     });
