@@ -22,6 +22,7 @@ $(document).on('pagebeforeshow ', '#home', function () {   // see: https://stack
 
 $(document).on('pagebeforeshow', '#details-page', function () {
     var textString = 'fix me';
+     $('#showData').text = "";
     var id = $('#detailParmHere').text();
     alert(id);
     $.getJSON('/findtranscript/' + id)
