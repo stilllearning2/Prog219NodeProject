@@ -22,7 +22,7 @@ $(document).on('pagebeforeshow ', '#home', function () {   // see: https://stack
 
 $(document).on('pagebeforeshow', '#details-page', function () {
     var textString = 'fix me';
-     $('#showData').text = "";
+     $('#showData').empty();
     var id = $('#detailParmHere').text();
     alert(id);
     $.getJSON('/findtranscript/' + id)
@@ -87,7 +87,6 @@ function addtranscript() {
         contentType: 'application/json',
         data: JSON.stringify(newtranscript),
         success: function (result) {
-            
             alert("Row inserted!");
             window.location.href = '#home';
         }
