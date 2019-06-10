@@ -112,7 +112,7 @@ function updatetranscript() {
         success: function (result) {
             alert("Row updated!");
             window.location.href = '#details-page';
-            location.reload();
+            window.location.reload();
         }};
     });
 }
