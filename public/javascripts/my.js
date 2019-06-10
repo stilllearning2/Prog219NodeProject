@@ -114,11 +114,6 @@ function updatetranscript() {
             $("#updateCourseHere").html(course);
         }
     });
-    $.mobile.changePage('#details-page', {
-        transition: 'slidedown',
-        reloadPage: true, // optional, force page reload.
-        reverse: false
-      });
 }
 
 
