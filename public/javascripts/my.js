@@ -113,7 +113,7 @@ function updatetranscript() {
             alert("Row updated!");
             window.location.href = '#details-page';
             window.location.reload();
-        };
+        }
     });
 }
 
