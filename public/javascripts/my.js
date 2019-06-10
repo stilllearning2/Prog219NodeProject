@@ -111,7 +111,7 @@ function updatetranscript() {
         data: JSON.stringify(updatedTranscript), 
         success: function (result) {
             alert("Row updated!");
-            window.location.reload(history.back());
+            window.location.reload('#details-page');
         }
     });
 }
