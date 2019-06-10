@@ -23,6 +23,7 @@ $(document).on('pagebeforeshow ', '#home', function () {   // see: https://stack
 $(document).on('pagebeforeshow', '#details-page', function () {
     var textString = 'fix me';
     var id = $('#detailParmHere').text();
+    alert(id);
     $.getJSON('/findtranscript/' + id)
         .done(function (item) {
             textString = "Year: " + item.Year + "     Term: " + item.Term + "     Course: " + item.Course +
@@ -86,7 +87,7 @@ function addtranscript() {
         data: JSON.stringify(newtranscript),
         success: function (result) {
             
-            alert("success");
+            alert("Row inserted!");
             window.location.href = '#home';
         }
     });
@@ -111,7 +112,6 @@ function updatetranscript() {
         data: JSON.stringify(updatedTranscript), 
         success: function (result) {
             alert("Row updated!");
-            alert(course);
             $("#detailParmHere").html(course);
             $("#updateCourseHere").html(course);
             window.location.href='#details-page';
