@@ -4,9 +4,10 @@
     <head>
         <title>Transcript App</title>
         // CSS
-        <link rel="stylesheet" type="text/css" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+        <link rel="stylesheet" href="../public/stylesheets/stylesheet.css" />
         <link rel="stylesheet" href="../public/stylesheets/themes/my-custom-theme.css" />
-        <link rel="stylesheet" href="../public/stylesheets/themes/jquery.mobile.icons.min.css" />
+        <link rel="stylesheet" type="text/css" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+        <!--link rel="stylesheet" href="../public/stylesheets/themes/jquery.mobile.icons.min.css" /-->
         
         // JS
         <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
@@ -26,8 +27,8 @@
 
     <body>
 
-        <div data-role="page" id="home">
-            <div data-theme="a" data-role="header">
+        <div data-role="page" id="home" data-theme="a" >
+            <div data-role="header">
                 <h3>The Transcripts App</h3>
                 <h4>Home Page</h4>
             </div>
@@ -41,14 +42,14 @@
                 <a href="#addpage" class="ui-btn" data-theme="b" data-transition="slideup" >Go to Add Page</a>                
             </div>
 
-            <div data-role="footer">
+            <div data-role="footer" >
                 <h3>Copyright Lem Haile and Craig 2019</h3>
             </div>
         </div>
 
 
 
-        <div data-role="page" id="addpage" data-theme="c">
+        <div data-role="page" id="addpage" data-theme="a">
             <div data-role="header">
                 <h3>The Transcripts App</h3>
                 <h4>Add Page</h4>
@@ -74,7 +75,7 @@
 
 
 
-        <div data-role="page" id="details-page">
+        <div data-role="page" id="details-page" data-theme="a" >
             <div data-theme="a" data-role="header">
                 <h3>The Transcripts App</h3>
                 <h4>Details Page</h4>
@@ -97,7 +98,7 @@
         </div>
 
 
-        <div data-role="page" id="update-page">
+        <div data-role="page" id="update-page" data-theme="a" >
             <div data-theme="a" data-role="header">
                 <h3>The Transcripts App</h3>
                 <h4>Updates Page</h4>
