@@ -103,7 +103,6 @@ function updatetranscript() {
     const updatedTranscript = { Year: year, Term: term, Course: course, Credits: credits, Grade: grade };
     $.ajax({
         url: '/updatetranscript/' + oldCourse,  // putting the transcript Course in the URL for the PUT method
-        //method: "PUT",
         type:'PUT',
         dataType: 'json',
         contentType: 'application/json',
@@ -112,6 +111,7 @@ function updatetranscript() {
             alert("Row updated!");
             $("#detailParmHere").html(course);
             $("#updateCourseHere").html(course);
+            window.location.href = '#details-page';
         }
     });
 }
