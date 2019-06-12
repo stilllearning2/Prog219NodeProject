@@ -1,5 +1,5 @@
 $(document).on('pagebeforeshow', '#home', function () {   // see: https://stackoverflow.com/questions/14468659/jquery-mobile-document-ready-vs-page-events
-    alert("pagebeforeShow"
+    alert("pagebeforeShow");
     var info_view = "";      //string to put HTML in
     $('#transcripts').empty();     // since I do this everytime the page is redone, I need to remove existing before apending them all again
     $.getJSON('/transcriptlist/')  //Send an AJAX request
