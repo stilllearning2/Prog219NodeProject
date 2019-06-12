@@ -1,4 +1,4 @@
-$(document).on('pagebeforeshow ', '#home', function () {   // see: https://stackoverflow.com/questions/14468659/jquery-mobile-document-ready-vs-page-events
+$(document).on('pagecontainerbeforeshow ', '#home', function () {   // see: https://stackoverflow.com/questions/14468659/jquery-mobile-document-ready-vs-page-events
     var info_view = "";      //string to put HTML in
     $('#transcripts').empty();     // since I do this everytime the page is redone, I need to remove existing before apending them all again
     $.getJSON('/transcriptlist/')  //Send an AJAX request
@@ -20,7 +20,7 @@ $(document).on('pagebeforeshow ', '#home', function () {   // see: https://stack
 });
 
 
-$(document).on('pagebeforeshow', '#details-page', function () {
+$(document).on('pagecontainerbeforeshow', '#details-page', function () {
     var textString = 'fix me';
     var id = $('#detailParmHere').text();
     $.getJSON('/findtranscript/' + id)
@@ -36,7 +36,7 @@ $(document).on('pagebeforeshow', '#details-page', function () {
         })
 });
 
-$(document).on('pagebeforeshow', '#update-page', function () {
+$(document).on('pagecontainerbeforeshow', '#update-page', function () {
     var textString = 'fix me';
     var id = $('#updateCourseHere').text();
     $.getJSON('/findtranscript/' + id)
@@ -54,13 +54,13 @@ $(document).on('pagebeforeshow', '#update-page', function () {
 });
 
 
-$(document).on('pagebeforeshow', '#deletepage', function () {
+$(document).on('pagecontainerbeforeshow', '#deletepage', function () {
     $('#transcriptToDelete').val('');
 });
 
 
 // clears the fields
-$(document).on('pagebeforeshow', '#addpage', function () {
+$(document).on('pagecontainerbeforeshow', '#addpage', function () {
     $('#newYear').val('');
     $('#newTerm').val('');
     $('#newCourse').val('');
