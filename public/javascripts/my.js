@@ -111,7 +111,6 @@ function updatetranscript() {
             alert("Row updated!");
             $("#detailParmHere").html(course);
             $("#updateCourseHere").html(course);
-            window.location.href = '#home';
         }
     });
 }
