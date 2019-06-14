@@ -38,7 +38,7 @@
 
             <div data-role="content">
                 <div>
-                    <ul data-role="listview" data-autodividers="true" data-theme="a" id="transcripts" data-transition="slideup" ></ul>
+                    <ul data-role="listview" data-autodividers="true" data-theme="a" id="transcripts" data-transition="slideup"  data-ajax="false"></ul>
                 </div>
 
                 <br />
@@ -68,7 +68,7 @@
                     Grade: <input type="text" id="newGrade" size="2" /> <br />
                     <input type="button" class="ui-btn" value="Add New" onclick="addtranscript()" />
                 </div>
-                <a href="#home" class="ui-btn" data-transition="slidedown">Home</a>
+                <a href="#home" class="ui-btn" data-transition="slidedown" data-ajax="false">Home</a>
             </div>
 
             <div data-role="footer">
@@ -89,10 +89,10 @@
                     <p id="detailParmHere" hidden >change1</p>
                     <p><span id="showText">change 2</span></p>
                     <br />
-                    <a href="#update-page" class="ui-btn" data-transition="slideup">Update</a>
+                    <a href="#update-page" class="ui-btn" data-transition="slideup" data-ajax="false">Update</a>
                     <input type="button" class="ui-btn" value="Delete" onclick="deletetranscript()" />
                 </div>
-                <a href="#home" class="ui-btn" data-transition="slidedown">Home</a>
+                <a href="#home" class="ui-btn" data-transition="slidedown" data-ajax="false">Home</a>
             </div>
             
             <div data-role="footer">
@@ -120,8 +120,8 @@
                 </div>
                 <br />
                 <div>
-                    <a href="#details-page" data-ajax="false" class="ui-btn" data-transition="slidedown">Details</a>
-                    <a href="#home" data-ajax="false" class="ui-btn" data-transition="slidedown">Home</a>
+                    <a href="#details-page" data-ajax="false" class="ui-btn" data-transition="slidedown" data-ajax="false">Details</a>
+                    <a href="#home" data-ajax="false" class="ui-btn" data-transition="slidedown" data-ajax="false">Home</a>
                 </div>
             </div>
             
